@@ -5,5 +5,6 @@ FROM eclipse-temurin:21-jdk
 WORKDIR /app
 #Copiamos el archivo .jar generado por Maven desde la carpeta ''target'' al contenedor (debe existir previamente)
 COPY target/mikrotik-dhcp-viewer-1.0-SNAPSHOT.jar app.jar
-# Comando que se ejecutara cuando el contenedor se inicie, ejecuta el archivo .jar usando Java.
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Comando que se ejecutara cuando el contenedor se inicie
+ENTRYPOINT ["java","-cp","app.jar","com.mikrotik.App"]
+
