@@ -1,0 +1,9 @@
+version: '3.0.8'
+
+services:
+  mikrotik-viewer:
+    build: .
+    image: mikrotik-dhcp-viewer:latest
+    container_name: mikrotik-dhcp-viewer
+    restart: unless-stopped
+    network_mode: host

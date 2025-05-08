@@ -8,7 +8,7 @@ import java.util.Map;
 public class App {
     public static void main(String[] args) {
         try {
-            ApiConnection conn = ApiConnection.connect("AD192.168.40.24");
+            ApiConnection conn = ApiConnection.connect("192.168.40.24");
             conn.login("admin", "009981");
 
             List<Map<String, String>> responses = conn.execute("/ip/dhcp-server/lease/print");
