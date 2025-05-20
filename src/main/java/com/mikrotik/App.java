@@ -8,15 +8,16 @@ import java.util.Map;
 
 public class App {
     public static void main(String[] args) {
+
         try {
             // Crear socket personalizado en el puerto 8729
-            Socket socket = new Socket("192.168.40.24", 8729);
+            Socket socket = new Socket("192.168.91.1", 8728);
 
             // Usar el socket para crear la conexión
             ApiConnection conn = ApiConnection.connect(String.valueOf(socket));
             conn.login("admin", "009981");
 
-            List<Map<String, String>> responses = conn.execute("/ip/dhcp-server/lease/print");
+            List<Map<String, String>> responses = conn.execute("/system/clock/print ");
 
             for (Map<String, String> response : responses) {
                 System.out.println(response);
@@ -28,3 +29,4 @@ public class App {
         }
     }
 }
+
